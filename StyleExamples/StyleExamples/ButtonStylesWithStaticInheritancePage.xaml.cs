@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Chapter2
+namespace StyleExamples
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ArrayPage : ContentPage
+    public partial class ButtonStylesWithStaticInheritancePage : ContentPage
     {
-        public ArrayPage()
+        public ButtonStylesWithStaticInheritancePage()
         {
             InitializeComponent();
         }

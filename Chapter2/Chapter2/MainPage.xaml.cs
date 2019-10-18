@@ -31,7 +31,7 @@ namespace Chapter2
                         gotoPage = new StaticPage();
                         break;
                     case "Array":
-                        gotoPage = new ArrayPage();
+                        gotoPage = new Array();
                         break;
                     case "Reference":
                         gotoPage = new ReferencePage();
@@ -46,12 +46,8 @@ namespace Chapter2
                         gotoPage = new NamespacePage();
                         break;
                 }
-                Detail = new NavigationPage(gotoPage);
-                ((ListView)sender).SelectedItem = null;
-                this.IsPresented = false;
+                Navigation.PushAsync(gotoPage);
             };
-
-            Detail = new NavigationPage(new NamespacePage());
         }
     }
 }

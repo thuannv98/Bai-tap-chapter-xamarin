@@ -18,7 +18,7 @@ lines of text.
         <Button Text = "Make It So" FontSize ="Large" HorizontalOptions="Center" VerticalOptions="Fill" Clicked="ButtonClicked" />
         <Entry Placeholder="Username" VerticalOptions="Center" Keyboard="Text" />
         <BoxView Color="Silver" WidthRequest="150" HeightRequest="150" HorizontalOptions="StartAndExpand" VerticalOptions="Fill" />
-        <Image Source="monkey.png" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Fill" >
+        <Image Source="monkey.jpg" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Fill" >
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ImageTapped"/>
             </Image.GestureRecognizers>
