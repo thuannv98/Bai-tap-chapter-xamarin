@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Chapter5.Trigger"
+             xmlns:local="clr-namespace:Chapter5">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Style.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="true">
+                        <Setter Property="BackgroundColor" Value="Yellow" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" VerticalOptions="CenterAndExpand" Padding="10">
+            <Entry x:Name="NameEntry" HeightRequest="40" Placeholder="User Name" Text=""/>
+            <Entry x:Name="PasswordEntry" HeightRequest="40" Placeholder="Password" Text="" IsPassword="True">
+                <Entry.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <local:PasswordValidationTriggerAction/>
+                    </EventTrigger>
+                </Entry.Triggers>
+            </Entry>
+            <Button Text="Submit" BackgroundColor="Green" TextColor="White" >
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference NameEntry }, Path=Text.Length}" Value="0"/>
+                            <BindingCondition Binding="{Binding Source={x:Reference PasswordEntry }, Path=Text.Length}" Value="0"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="False"/>
+                    </MultiTrigger>
+                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference NameEntry }, Path=Text.Length}" Value="0">
+                        <Setter Property="IsEnabled" Value="False"/>
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

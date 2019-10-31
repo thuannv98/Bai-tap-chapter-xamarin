@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Chapter5.control"
+             Title="Các Control">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="0" Text="Giá trị lấy  theo sự kiện: "/>
+                <Label Grid.Row="0" Grid.Column="1" x:Name="EventValue"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Giá trị của trang: " />
+                <Label Grid.Row="1" Grid.Column="1" x:Name="PageValue"/>
+            </Grid>
+            <Picker x:Name="ThePicker" Title="Options" SelectedIndexChanged="PickerSelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Item 1</x:String>
+                    <x:String>Item 2</x:String>
+                    <x:String>Item 3</x:String>
+                    <x:String>Item 4</x:String>
+                    <x:String>Item 5</x:String>
+                </Picker.Items>
+            </Picker>
+            <DatePicker x:Name="TheDatePicker" Format="D" VerticalOptions="CenterAndExpand" DateSelected="DatePickerDateSelected"></DatePicker>
+            <TimePicker x:Name="TheTimePicker" Format="T" VerticalOptions="CenterAndExpand" PropertyChanged="TimePickerPropertyChanged"></TimePicker>
+            <Stepper x:Name="TheStepper" Minimum="0" Maximum="10" Increment="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" ValueChanged="StepperValueChanged"></Stepper>
+            <Slider x:Name="TheSlider" Minimum="0" Maximum="100" Value="50" VerticalOptions="CenterAndExpand" ValueChanged="SliderValueChanged" WidthRequest="300"></Slider>
+            <Switch x:Name="TheSwitch" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Toggled="SwitchToggled"></Switch>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

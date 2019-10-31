@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Chapter6.ListViewButton"
+             Title="ListView Button">
+    <ListView x:Name="ButtonList" RowHeight="100" BackgroundColor="Cyan" HasUnevenRows="true" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="5,10,5,15">
+                        <StackLayout HorizontalOptions="Start" Orientation="Vertical">
+                            <Label HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="Green" Text="{Binding Title}"/>
+                            <Label HorizontalOptions="Start" FontSize="12" FontAttributes="Bold" TextColor="Green" Text="{Binding Description}"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal" WidthRequest="260">
+                            <Label HorizontalOptions="Center" FontSize="25" TextColor="Orange" Text="{Binding Price}"/>
+                            <Button x:Name="BuyButton" Text="Mua" BackgroundColor="BlueViolet" TextColor="AntiqueWhite" HorizontalOptions="EndAndExpand" Clicked="mua" CommandParameter="{Binding .}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
