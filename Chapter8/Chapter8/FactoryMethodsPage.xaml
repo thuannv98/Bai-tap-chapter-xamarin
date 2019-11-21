@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Chapter8.FactoryMethodsPage"
+             xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS" 
+             xmlns:droid="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android">
+    <ContentPage.Content>
+        <StackLayout>
+            <ios:UITextField Text="Papyrus Font">
+                <ios:UITextField.Font>
+                    <ios:UIFont x:FactoryMethod="FromName">
+                        <x:Arguments>
+                            <x:String>Papyrus</x:String>
+                            <x:Single>24</x:Single>
+                        </x:Arguments>
+                    </ios:UIFont>
+                </ios:UITextField.Font>
+            </ios:UITextField>
+            <droid:EditText x:Arguments="{x:Static formdroid:Forms.Context}" Text="Serif Font" TextSize="24">
+                <droid:EditText.Typeface>
+                    <androidGraphics:Typeface x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <x:String>Serif</x:String>
+                            <androidGraphics:TypefaceStyle>Italic</androidGraphics:TypefaceStyle>
+                        </x:Arguments>
+                    </androidGraphics:Typeface>
+                </droid:EditText.Typeface>
+            </droid:EditText>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

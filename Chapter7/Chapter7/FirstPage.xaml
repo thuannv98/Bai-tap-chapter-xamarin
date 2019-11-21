@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Chapter7.FirstPage"
+             Title="Trang 1">
+    <TableView Intent="Menu">
+        <TableView.Root>
+            <TableSection Title="Danh sách">
+                <TextCell Text = "Điều hướng phân cấp sử dụng NavigationPage" Tapped="navigateToPage" CommandParameter="NavPage" />
+                <TextCell Text = "Menu xổ xuống sử dụng ToolbarItems" Tapped="navigateToPage" CommandParameter="DropdownMenu" />
+                <TextCell Text = "Modal" Tapped="navigateToPage" CommandParameter="ModalPage" />
+                <TextCell Text = "Thông báo" Tapped="navigateToPage" CommandParameter="Alert" />
+                <TextCell Text = "Drilldown sử dụng Item ListView" Tapped="navigateToPage" CommandParameter="DrilldownListViewByItem" />
+                <TextCell Text = "Drilldown sử dụng Page ListView" Tapped="navigateToPage" CommandParameter="DrilldownListViewByPage" />
+                <TextCell Text = "Drilldown sử dụng TableView để gom nhóm" Tapped="navigateToPage" CommandParameter="DrilldownTableView" />
+                <TextCell Text = "Menu đẩy sử dụng ActionSheet" Tapped="navigateToPage" CommandParameter="PopupMenu" />
+                <TextCell Text = "Static Global" Tapped="navigateToPage" CommandParameter="GlobalPage1" />
+                <TextCell Text = "Sử dụng Tab" Tapped="navigateToPage" CommandParameter="TabPage" />
+                <TextCell Text = "Sử dụng Tab có Source" Tapped="navigateToPage" CommandParameter="TabPageDatabound" />
+                <TextCell Text = "Bảng điều khiển sử dụng Grid" Tapped="navigateToPage" CommandParameter="Springboard" />
+                <TextCell Text = "Điều hướng trang sử dụng Carousel" Tapped="navigateToPage" CommandParameter="Carousel" />
+            </TableSection>
+        </TableView.Root>
+    </TableView>
+</ContentPage>
